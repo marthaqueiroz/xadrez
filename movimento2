@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+
+    /* Constantes de movimento */
+    const int casas_torre = 5;
+    const int casas_bispo = 5;
+    const int casas_rainha = 8;
+
+    /* --------- Movimento da Torre (usando while) --------- */
+    int t = 1;
+    while (t <= casas_torre) {
+        printf("Direita\n");
+        t++;
+    }
+
+    /* --------- Movimento do Bispo (usando do-while) --------- */
+    int b = 1;
+    do {
+        printf("Cima, Direita\n");
+        b++;
+    } while (b <= casas_bispo);
+
+    /* --------- Movimento da Rainha (usando for) --------- */
+    for (int r = 1; r <= casas_rainha; r++) {
+        printf("Esquerda\n");
+    }
+
+    /* Linha em branco para separar o movimento do Cavalo */
+    printf("\n");
+
+    /* --------- Movimento do Cavalo (usando loops aninhados) --------- */
+    const int casas_baixo = 2;
+    const int casas_esquerda = 1;
+
+    // Primeiro loop (for obrigatório): movimentos para baixo
+    for (int i = 1; i <= casas_baixo; i++) {
+
+        // Segundo loop (while): imprime o movimento "Baixo"
+        int j = 1;
+        while (j <= 1) {  // apenas uma vez por iteração externa
+            printf("Baixo\n");
+            j++;
+        }
+    }
+
+    // Após terminar as duas casas para baixo, move uma casa para a esquerda
+    int k = 1;
+    do {
+        printf("Esquerda\n");
+        k++;
+    } while (k <= casas_esquerda);
+
+    return 0;
+}
